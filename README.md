@@ -19,6 +19,18 @@ In addition to this [`README.md`](README.md), the following documents are also a
 - [`enterprise.md`](docs/enterprise.md) &ndash; A summary of various features and tips for making the application usable in enterprise settings.
 - [`netquirk.md`](docs/netquirk.md) &ndash; A description of various networking quirks and "kill-switch" semantics.
 
+## Repository structure
+
+The project is primarily written in Go and is organized into several components:
+
+- `main.go` – command-line entry point.
+- `ui/` – Windows graphical interface implemented in Go using the `walk` library.
+- `manager/`, `services/`, `tunnel/`, `driver/` – service management, networking, and driver helpers.
+- `ringlogger/` and `elevate/` – logging and privilege helpers.
+- `embeddable-dll-service/` – optional library and demo code, including C# examples, for embedding WireGuard into other applications.
+
+Most functionality, including the UI, is built with Go. Resource scripts (`resources.rc`) and demo C# code are also included for integration scenarios.
+
 ## License
 
 This repository is MIT-licensed.
